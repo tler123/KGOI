@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranking</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .scoreboard {
+            max-width: 1100px;
+            width: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            border-radius: 0;
+            border: 1px solid #e2e6e9;
+            overflow-x: auto;
+        }
+
+        .rank-title {
+            text-align: center;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: 1px;
+            padding: 1.5rem 1rem 0.8rem 1rem;
+            color: #1a2c3f;
+            border-bottom: 1px solid #dce3e9;
+            margin: 0;
+            background-color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            text-align: center;
+            white-space: nowrap;
+            background-color: #fff;
+        }
+
+        thead tr {
+            border-bottom: 2px solid #d0d5da;
+        }
+
+        th {
+            font-weight: 600;
+            color: #1e2a3a;
+            padding: 0.9rem 0.5rem;
+            background-color: #fafbfc;
+            letter-spacing: 0.3px;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 0.8rem 0.5rem;
+            color: #2c3e4f;
+            border-bottom: 1px solid #eaeef2;
+        }
+
+        td:first-child {
+            font-weight: 500;
+            color: #1e3c5a;
+        }
+
+        td:last-child {
+            font-weight: 500;
+            color: #0b2a40;
+        }
+
+        td:nth-child(3) {
+            font-style: italic;
+            color: #3a4b5e;
+        }
+
+        td:nth-child(4),
+        td:nth-child(5),
+        td:nth-child(6),
+        td:nth-child(7) {
+            font-family: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', monospace;
+            font-size: 0.95rem;
+        }
+
+        th:nth-child(4),
+        th:nth-child(5),
+        th:nth-child(6),
+        th:nth-child(7) {
+            font-weight: 500;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #fbfdfe;
+        }
+
+        tbody tr:hover {
+            background-color: #f2f6f9;
+            transition: none;
+        }
+
+        @media (max-width: 650px) {
+            .rank-title {
+                font-size: 1.6rem;
+                padding: 1.2rem 0.5rem 0.5rem;
+            }
+            th, td {
+                padding: 0.6rem 0.3rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        .footer-note {
+            padding: 1rem 1.5rem;
+            border-top: 1px solid #e2e6e9;
+            font-size: 0.9rem;
+            color: #3d5368;
+            background-color: #f9fbfd;
+            text-align: left;
+            font-style: normal;
+            letter-spacing: 0.3px;
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2c3e4f;
+            border-bottom: 1px dotted #a0b3c6;
+        }
+        a:hover {
+            border-bottom: 1px solid #4a5a6a;
+        }
+    </style>
+</head>
+<body>
+    <div class="scoreboard">
+        <div class="rank-title">KGOI-S 排行榜</div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>排名</th>
+                    <th>姓名</th>
+                    <th>用戶名</th>
+                    <th>problem1</th>
+                    <th>problem2</th>
+                    <th>problem3</th>
+                    <th>problem4</th>
+                    <th>總分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>陳正清</td>
+                    <td>chenzq</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>林逸凡</td>
+                    <td>lyf_oi</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>90</td>
+                    <td>100</td>
+                    <td>390</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>唐雅琪</td>
+                    <td>yaki_t</td>
+                    <td>100</td>
+                    <td>85</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>385</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>周明遠</td>
+                    <td>my_zhou</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>70</td>
+                    <td>100</td>
+                    <td>370</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>吳思睿</td>
+                    <td>rui_wu</td>
+                    <td>90</td>
+                    <td>100</td>
+                    <td>80</td>
+                    <td>100</td>
+                    <td>370</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>趙一葦</td>
+                    <td>wei_zhao</td>
+                    <td>100</td>
+                    <td>70</td>
+                    <td>100</td>
+                    <td>90</td>
+                    <td>360</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>許星冉</td>
+                    <td>xuran_x</td>
+                    <td>80</td>
+                    <td>100</td>
+                    <td>70</td>
+                    <td>100</td>
+                    <td>350</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>孫明朗</td>
+                    <td>ming_s</td>
+                    <td>70</td>
+                    <td>100</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>340</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>高天</td>
+                    <td>tian_gao</td>
+                    <td>60</td>
+                    <td>100</td>
+                    <td>100</td>
+                    <td>70</td>
+                    <td>330</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>李沐陽</td>
+                    <td>muyang_li</td>
+                    <td>100</td>
+                    <td>60</td>
+                    <td>70</td>
+                    <td>90</td>
+                    <td>320</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>鄭子涵</td>
+                    <td>han_z</td>
+                    <td>70</td>
+                    <td>80</td>
+                    <td>70</td>
+                    <td>80</td>
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>何思遠</td>
+                    <td>siyuan_he</td>
+                    <td>50</td>
+                    <td>100</td>
+                    <td>60</td>
+                    <td>80</td>
+                    <td>290</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>王子萱</td>
+                    <td>zixuan_w</td>
+                    <td>40</td>
+                    <td>70</td>
+                    <td>100</td>
+                    <td>70</td>
+                    <td>280</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>傅曉冬</td>
+                    <td>dx_fu</td>
+                    <td>30</td>
+                    <td>90</td>
+                    <td>80</td>
+                    <td>60</td>
+                    <td>260</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>陸一鳴</td>
+                    <td>ym_lu</td>
+                    <td>20</td>
+                    <td>70</td>
+                    <td>60</td>
+                    <td>100</td>
+                    <td>250</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="footer-note">
+            備註：
+        </div>
+    </div>
+
+</body>
+</html>
